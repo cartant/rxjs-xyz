@@ -9,7 +9,7 @@ const Index = (props) => {
   const { data } = props;
   const siteAuthor = data.site.siteMetadata.author;
   const siteTitle = data.site.siteMetadata.title;
-  const posts = data.allMarkdownRemark.edges;
+  const nodes = data.allMarkdownRemark.edges;
 
   return (
     <Layout location={props.location} title={siteTitle}>
@@ -19,8 +19,7 @@ const Index = (props) => {
         image={"/reactivex-card.png"}
       />
       <Bio />
-      {posts.map(({ node }) => {
-        const timeToRead = node.timeToRead;
+      {nodes.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug;
         return (
           <article key={node.fields.slug}>
@@ -34,7 +33,14 @@ const Index = (props) => {
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
+              <small>
+                By{" "}
+                <a href={`https://github.com/${node.frontmatter.authorGitHub}`}>
+                  {node.frontmatter.author}
+                </a>
+                {"\u2002•\u2002"}
+                Added {node.frontmatter.date}
+              </small>
             </header>
             <section>
               <p
@@ -60,7 +66,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___title], order: ASC }) {
       edges {
         node {
           excerpt
@@ -72,8 +78,10 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             description
+            author
+            authorGitHub
+            packageGitHub
           }
-          timeToRead
         }
       }
     }

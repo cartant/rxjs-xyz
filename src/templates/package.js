@@ -6,14 +6,14 @@ import SEO from "../components/seo";
 import { rhythm, scale } from "../utils/typography";
 
 const PackageTemplate = (props) => {
-  const post = props.data.markdownRemark;
+  const node = props.data.markdownRemark;
   const siteTitle = props.data.site.siteMetadata.title;
 
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        title={node.frontmatter.title}
+        description={node.frontmatter.description || node.excerpt}
         image={"/reactivex-card.png"}
       />
       <article>
@@ -24,7 +24,7 @@ const PackageTemplate = (props) => {
               marginBottom: 0,
             }}
           >
-            {post.frontmatter.title}
+            {node.frontmatter.title}
           </h1>
           <p
             style={{
@@ -33,10 +33,15 @@ const PackageTemplate = (props) => {
               marginBottom: rhythm(1),
             }}
           >
-            {post.frontmatter.date}
+            By{" "}
+            <a href={`https://github.com/${node.frontmatter.authorGitHub}`}>
+              {node.frontmatter.author}
+            </a>
+            {"\u2002•\u2002"}
+            Added {node.frontmatter.date}
           </p>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <section dangerouslySetInnerHTML={{ __html: node.html }} />
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -67,8 +72,10 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        author
+        authorGitHub
+        packageGitHub
       }
-      timeToRead
     }
   }
 `;
