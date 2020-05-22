@@ -1,6 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Bio from "../components/bio";
+import Details from "../components/details";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { rhythm, scale } from "../utils/typography";
@@ -33,12 +34,7 @@ const PackageTemplate = (props) => {
               marginBottom: rhythm(1),
             }}
           >
-            By{" "}
-            <a href={`https://github.com/${node.frontmatter.authorGitHub}`}>
-              {node.frontmatter.author}
-            </a>
-            {"\u2002•\u2002"}
-            Added {node.frontmatter.date}
+            <Details frontmatter={node.frontmatter} />
           </p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: node.html }} />
