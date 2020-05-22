@@ -1,0 +1,13 @@
+{
+  "builds": [
+    {
+      "config": {
+        "distDir": "public"
+      },
+      "src": "package.json",
+      "use": "@now/static-build"
+    }
+  ],
+  "name": "rxjs-xyz",
+  "version": 2
+}
