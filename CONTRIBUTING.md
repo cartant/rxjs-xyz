@@ -24,11 +24,11 @@ To add a user-land package to the site, open a PR that:
 
         ---
         title: "<package name>"
-        description: <description
+        description: <description>
         author: "<author's full name>"
         authorGitHub: "<author's GitHub username>"
         packageGitHub: "<package path>"
-        date: "<current date in ISO format"
+        date: "<current date in ISO format>"
         categories: []
         keywords: []
         ---
