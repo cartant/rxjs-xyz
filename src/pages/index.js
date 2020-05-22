@@ -15,7 +15,7 @@ const Index = (props) => {
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO
-        title={siteAuthor}
+        title={"Packages"}
         description={"RxJS community packages"}
         image={"/reactivex-card.png"}
       />
