@@ -31,7 +31,7 @@ const PackageTemplate = (props) => {
             style={{
               ...scale(-1 / 5),
               display: `block`,
-              marginBottom: rhythm(1),
+              margin: `${rhythm(1)} 0`,
             }}
           >
             <Details frontmatter={node.frontmatter} />
