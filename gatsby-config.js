@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `RxJS.xyz`,
-    author: `Nicholas Jamieson`,
-    description: `RxJS community packages`,
+    author: `RxJS Community`,
+    description: `RxJS Community Packages`,
     siteUrl: `https://rxjs.xyz/`,
     social: {
       gitHub: `cartant/rxjs-xyz`,
