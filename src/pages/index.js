@@ -8,7 +8,6 @@ import { rhythm } from "../utils/typography";
 
 const Index = (props) => {
   const { data } = props;
-  const siteAuthor = data.site.siteMetadata.author;
   const siteTitle = data.site.siteMetadata.title;
   const nodes = data.allMarkdownRemark.edges;
 
