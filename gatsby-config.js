@@ -96,5 +96,32 @@ module.exports = {
     },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-twitter`,
+    {
+      resolve: `gatsby-plugin-lunr`,
+      options: {
+        languages: [{ name: `en` }],
+        fields: [
+          { name: `title`, attributes: { boost: 15 } },
+          { name: `description`, attributes: { boost: 5 } },
+          { name: `categories`, attributes: { boost: 10 } },
+          { name: `keywords`, attributes: { boost: 10 } },
+          { name: `author` },
+          { name: `content` },
+          { name: `slug`, store: true },
+        ],
+        resolvers: {
+          MarkdownRemark: {
+            title: (node) => node.frontmatter.title,
+            description: (node) => node.frontmatter.description,
+            categories: (node) => node.frontmatter.categories.join(" "),
+            keywords: (node) => node.frontmatter.keywords.join(" "),
+            author: (node) => node.frontmatter.author,
+            content: (node) => node.rawMarkdownBody,
+            slug: (node) => node.fields.slug,
+          },
+        },
+        filename: `search-index.json`,
+      },
+    },
   ],
 };
