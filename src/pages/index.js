@@ -9,7 +9,7 @@ import { rhythm } from "../utils/typography";
 const Index = (props) => {
   const { data } = props;
   const siteTitle = data.site.siteMetadata.title;
-  const nodes = data.allMarkdownRemark.edges;
+  const { edges } = data.allMarkdownRemark;
 
   return (
     <Layout location={props.location} title={siteTitle}>
@@ -19,7 +19,7 @@ const Index = (props) => {
         image={"/reactivex-card.png"}
       />
       <Bio />
-      {nodes.map(({ node }) => {
+      {edges.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug;
         return (
           <article key={node.fields.slug}>
