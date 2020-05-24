@@ -26,8 +26,8 @@ To add a user-land package to the site, open a PR that:
         title: "<package name>"
         description: <description>
         author: "<author's full name>"
-        authorGitHub: "<author's GitHub username>"
-        packageGitHub: "<package path>"
+        authorGitHub: "<author's GitHub name>"
+        packageGitHub: "<author's GitHub name>/<repo name>"
         date: "<current date in ISO format>"
         categories: []
         keywords: []
