@@ -20,6 +20,10 @@ To add a user-land package to the site, open a PR that:
 
         rx-angular__state
 
+  Note that if the package is scoped, it's important that scoped name is specified in the `title`, as it will be used to build an npm link. For example:
+
+        title: "@rx-angular/state"
+
 - Create an `index.md` file in the directory and add the following frontmatter:
 
         ---
