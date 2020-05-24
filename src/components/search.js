@@ -74,15 +74,12 @@ const styles = css`
 function Search({ onSearch }) {
   const [term, setTerm] = React.useState("");
   const [debouncedTerm, setDebouncedTerm] = React.useState("");
-
-  const [, cancelDebounce] = useDebounce(() => setDebouncedTerm(term), 400, [
-    term,
-  ]);
+  useDebounce(() => setDebouncedTerm(term), 400, [term]);
 
   React.useEffect(() => {
-    if (window.__LUNR__ && debouncedTerm) {
+    const trimmedTerm = debouncedTerm.trim();
+    if (window.__LUNR__ && trimmedTerm) {
       window.__LUNR__.__loaded.then((lunr) => {
-        const trimmedTerm = debouncedTerm.trim();
         const refs = lunr.en.index.search(trimmedTerm);
         const slugs = refs.map(({ ref }) => lunr.en.store[ref].slug);
         onSearch({ slugs, term: trimmedTerm });
@@ -113,8 +110,7 @@ function Search({ onSearch }) {
           value={"\u{1F5D9}"}
           onClick={() => {
             setTerm("");
-            cancelDebounce();
-            onSearch({ slugs: [], term: "" });
+            setDebouncedTerm("");
           }}
         />
       </form>
