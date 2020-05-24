@@ -4,7 +4,7 @@ description: A set of operators for working with Observable<string> values
 author: "Tane Piper"
 authorGitHub: "tanepiper"
 packageGitHub: "tanepiper/rxjs-primitives"
-date: "2020-05-242T12:00:00+1000"
+date: "2020-05-24T12:00:00+1000"
 categories: []
 keywords: []
 ---
