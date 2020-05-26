@@ -107,7 +107,7 @@ function Search({ onSearch }) {
         />
         <input
           type="button"
-          value={"\u{1F5D9}"}
+          value="Clear"
           onClick={() => {
             setTerm("");
             setDebouncedTerm("");
