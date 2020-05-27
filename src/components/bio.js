@@ -5,26 +5,10 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import { css } from "@emotion/core";
 import { useStaticQuery, graphql } from "gatsby";
 import Image from "gatsby-image";
 import React from "react";
 import { rhythm } from "../utils/typography";
-
-const linkImagesStyles = css`
-  display: inline-flex;
-  a {
-    box-shadow: none;
-    margin-left: ${rhythm(0.5)};
-  }
-  a:first-of-type {
-    margin-left: 0;
-  }
-  img {
-    height: 16px;
-    width: 16px;
-  }
-`;
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -49,7 +33,7 @@ const Bio = () => {
     }
   `);
 
-  const { author, description, social } = data.site.siteMetadata;
+  const { author, description } = data.site.siteMetadata;
 
   return (
     <div
@@ -77,14 +61,14 @@ const Bio = () => {
       <p style={{ margin: 0 }}>
         {description}
         <br />
-        <span css={linkImagesStyles}>
-          <a href={`https://github.com/${social.gitHub}`}>
-            <img src="/github.svg" alt="GitHub" />
-          </a>
-          <a href={`https://twitter.com/${social.twitter}`}>
-            <img src="/twitter.svg" alt="Twitter" />
-          </a>
-        </span>
+        To list an RxJS-related package,{" "}
+        <a
+          href="https://github.com/cartant/rxjs-xyz/blob/master/CONTRIBUTING.md"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          open a PR
+        </a>
       </p>
     </div>
   );
