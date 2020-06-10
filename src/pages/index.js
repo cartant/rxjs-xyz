@@ -50,7 +50,7 @@ const Index = (props) => {
   );
 
   return (
-    <Layout location={props.location} title={siteTitle}>
+    <Layout location={props.location} title={siteTitle} rss={true}>
       <SEO
         title={"Packages"}
         description={"RxJS community packages"}

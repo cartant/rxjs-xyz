@@ -23,7 +23,7 @@ const Layout = (props) => {
       }
     `
   );
-  const { location, title, children, copyright = false } = props;
+  const { location, title, children, copyright = false, rss = false } = props;
   const rootPath = `${__PATH_PREFIX__}/`;
   let header;
 
@@ -77,8 +77,8 @@ const Layout = (props) => {
     >
       <header>{header}</header>
       <main>{children}</main>
-      {copyright && (
-        <footer style={{ display: "flex", justifyContent: "space-between" }}>
+      <footer style={{ display: "flex", justifyContent: "space-between" }}>
+        {copyright && (
           <span>
             © {new Date().getFullYear()}
             {` `}
@@ -86,8 +86,19 @@ const Layout = (props) => {
             {` `}
             All&nbsp;Rights&nbsp;Reserved
           </span>
-        </footer>
-      )}
+        )}
+        {rss && (
+          <Link
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+            }}
+            to={`/rss.xml`}
+          >
+            RSS
+          </Link>
+        )}
+      </footer>
     </div>
   );
 };
