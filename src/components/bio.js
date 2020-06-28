@@ -63,7 +63,7 @@ const Bio = () => {
         <br />
         To list an RxJS-related package,{" "}
         <a
-          href="https://github.com/cartant/rxjs-xyz/blob/master/CONTRIBUTING.md"
+          href="https://github.com/cartant/rxjs-xyz/blob/main/CONTRIBUTING.md"
           target="_blank"
           rel="noopener noreferrer"
         >
