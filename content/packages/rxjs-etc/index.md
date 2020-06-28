@@ -9,6 +9,6 @@ categories: []
 keywords: []
 ---
 
-A bunch of observables and operators for RxJS.
+A bunch of observables and operators for RxJS written and maintained by an RxJS core team member.
 
 [README.md](https://github.com/cartant/rxjs-etc/blob/master/README.md)
