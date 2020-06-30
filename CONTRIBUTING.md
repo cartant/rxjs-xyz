@@ -39,6 +39,6 @@ To add a user-land package to the site, open a PR that:
 
 - Add markup content to the `index.md`. You might want to add only a brief description of what the package does, along with a link to the `README.md` in GitHub.
 
-  If you do want to add more content - examples, etc. - the site supports syntax-highlighted, language-specific code snippets.
+  If you do want to add more content - examples, etc. - the site supports syntax-highlighted, language-specific code snippets. Contributors are welcome to add as much content as they see fit. The reason for most entries containing little more than a link to the `README.md` file is that I didn't want to copy content from the packages, as that would impose a burden on the package author(s) - i.e. they might feel like the content should be kept in sync.
 
   If you do add additional content, please refrain from adding links to sites other than GitHub and npm. PRs seeking to add markdown content that links to sites other than GitHub and npm will be rejected.
