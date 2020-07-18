@@ -1,5 +1,5 @@
 ---
-title: "RxXpress"
+title: "rxxpress"
 description: An Experimental Mashup of RxJS and Express
 author: "Eugene Ghanizadeh Khoub"
 authorGitHub: "loreanvictor"
