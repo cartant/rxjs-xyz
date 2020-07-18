@@ -1,5 +1,5 @@
 ---
-title: "RxDeep"
+title: "rxdeep"
 description: Reactive State-Management using RxJS
 author: "Eugene Ghanizadeh Khoub"
 authorGitHub: "loreanvictor"
