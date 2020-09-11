@@ -7,6 +7,17 @@ function Details({ frontmatter }) {
       <a href={`https://github.com/${frontmatter.authorGitHub}`}>
         {frontmatter.author}
       </a>
+      {frontmatter.moreAuthors &&
+        frontmatter.moreAuthors.map((author, index) => (
+          <Fragment>
+            {", "}
+            <a
+              href={`https://github.com/${frontmatter.moreAuthorGitHubs[index]}`}
+            >
+              {author}
+            </a>
+          </Fragment>
+        ))}
       {"\u2002•\u2002"}
       Added {frontmatter.date}
       {"\u2002•\u2002"}

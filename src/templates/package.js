@@ -70,6 +70,8 @@ export const pageQuery = graphql`
         description
         author
         authorGitHub
+        moreAuthors
+        moreAuthorGitHubs
         packageGitHub
       }
     }

@@ -116,7 +116,13 @@ module.exports = {
             description: (node) => node.frontmatter.description,
             categories: (node) => node.frontmatter.categories.join(" "),
             keywords: (node) => node.frontmatter.keywords.join(" "),
-            author: (node) => node.frontmatter.author,
+            author: (node) =>
+              Array.isArray(node.frontmatter.moreAuthors)
+                ? [
+                    node.frontmatter.author,
+                    ...node.frontmatter.moreAuthors,
+                  ].join(" ")
+                : node.frontmatter.author,
             content: (node) => node.rawMarkdownBody,
             slug: (node) => node.fields.slug,
           },

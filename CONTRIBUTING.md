@@ -30,11 +30,20 @@ To add a user-land package to the site, open a PR that:
         title: "<package name>"
         description: <description>
         author: "<author's full name>"
-        authorGitHub: "<author's GitHub name>"
-        packageGitHub: "<author's GitHub name>/<repo name>"
+        authorGitHub: "<author's GitHub handle>"
+        packageGitHub: "<author's GitHub handle>/<repo name>"
         date: "<current date in ISO format>"
         categories: []
         keywords: []
+        ---
+
+  For packages that have multiple authors, more names and GitHub handles can be added to the using `moreAuthors` and `moreAuthorGitHubs` properties.
+
+        ---
+        author: "<author one's full name>"
+        authorGitHub: "<author one's GitHub name>"
+        moreAuthors: ["<author two's full name>"]
+        moreAuthorGitHubs: ["<author two's GitHub handle>"]
         ---
 
 - Add markup content to the `index.md`. You might want to add only a brief description of what the package does, along with a link to the `README.md` in GitHub.
