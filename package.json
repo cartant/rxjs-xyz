@@ -76,7 +76,7 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
-    "deploy": "now --prod",
+    "deploy": "vercel --prod",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json}\" && prettier --config ./.prettierrc-md --write \"**/*.md\"",
     "lint": "prettier --check \"**/*.{js,jsx,json}\" && prettier --config ./.prettierrc-md --check \"**/*.md\" && remark \"content/packages/**/*.md\"",
